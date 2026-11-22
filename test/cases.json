@@ -1,0 +1,66 @@
+{
+ "tests": [
+  {
+   "in": {
+    "log": "2026-11-20 10:15:02 sshd[2211]: Failed password for invalid user admin from 203.0.113.45 port 51522 ssh2\n2026-11-20 10:15:09 sshd[2211]: Accepted password for ayse from 203.0.113.45 port 51530 ssh2\n[web] POST /login user=mehmet.c@example.com password=Yaz2026! ip=198.51.100.7\napi call Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.sig12345abcd\nDHCPACK on 10.20.30.40 to 00:1a:2b:3c:4d:5e via eth0\nCONTOSO\\ali.yilmaz logged on to FS01",
+    "pseudo": true,
+    "ip": true,
+    "mail": true,
+    "sec": true,
+    "user": true,
+    "mac": true,
+    "card": true,
+    "iban": true,
+    "tckn": true
+   },
+   "v": {
+    "counts": {
+     "SECRET": 2,
+     "EMAIL": 1,
+     "MAC": 1,
+     "IP": 4,
+     "USER": 3
+    },
+    "out": "2026-11-20 10:15:02 sshd[2211]: Failed password for invalid user USER-2 from IP-1 port 51522 ssh2\n2026-11-20 10:15:09 sshd[2211]: Accepted password for USER-3 from IP-1 port 51530 ssh2\n[web] POST /login user=EMAIL-1 password=SECRET-2 ip=IP-2\napi call Authorization: Bearer SECRET-1\nDHCPACK on IP-3 to MAC-1 via eth0\nCONTOSO\\USER-1 logged on to FS01"
+   }
+  },
+  {
+   "in": {
+    "log": "Customer 10000000146 called; card 4111 1111 1111 1111, IBAN TR33 0006 1005 1978 6457 8413 26, order 4711",
+    "pseudo": false,
+    "card": true,
+    "iban": true,
+    "tckn": true
+   },
+   "v": {
+    "out": "Customer [TCKN] called; card [CARD], IBAN [IBAN], order 4711"
+   }
+  },
+  {
+   "in": {
+    "log": "id 12345678901 and 4111 1111 1111 1112",
+    "card": true,
+    "tckn": true
+   },
+   "v": {
+    "out": "id 12345678901 and 4111 1111 1111 1112"
+   }
+  },
+  {
+   "in": {
+    "log": "srv: ali",
+    "extra": "srv",
+    "pseudo": false
+   },
+   "v": {
+    "out": "[TERM]: ali"
+   }
+  },
+  {
+   "in": {
+    "log": "   "
+   },
+   "err": "log"
+  }
+ ]
+}

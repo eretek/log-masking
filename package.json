@@ -1,0 +1,15 @@
+{
+  "name": "log-masking",
+  "version": "1.1.3",
+  "private": true,
+  "description": "Mask IPs, emails, MACs, usernames, passwords/tokens, card numbers, IBANs and Turkish IDs in logs in your browser; prepare logs for sharing with consistent pseudonyms.",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://siberguvenlik.eretek.com/en/tools/log-masking",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node test/run.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
